@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Serial Data Display</title>
+</head>
+<body>
+  <h1>Current Serial Data</h1>
+  <div id="dataBox">Loading data...</div>
+
+  <script>
+    async function fetchData() {
+      try {
+        const response = await fetch('https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPOSITORY/main/data.txt');
+        const data = await response.text();
+        document.getElementById('dataBox').innerText = data;
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+
+    // Fetch data every 5 seconds
+    setInterval(fetchData, 5000);
+    fetchData();
+  </script>
+</body>
+</html>
 
