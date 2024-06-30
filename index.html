@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> GAP 1 Dashboard</title>
+  <title> SOTERIA Dashboard</title>
 
   <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -242,7 +242,7 @@
     <div class="status widget">
       <button id="pairButton">CONNECT</button>
       <div class="label statusBar" id="bluetooth">Click the connect button to connect your device</div>
-      <img src="Logo-Arduino-Pro-inline.svg" style="position: inherit;padding-right: 0px;filter: invert(100%);float: right; grid-column: 3; width: 120%; margin-top: 0%;" />
+      <img src="soteria.png" style="position: inherit;padding-right: 0px;filter: invert(100%);float: right; grid-column: 3; width: 120%; margin-top: 0%;" />
     </div>
 
     <div class="square widget" id="3d">
@@ -332,11 +332,11 @@
           <option value="female">Female</option>
           <option value="other">Other</option>
         </select>
-        <button type="button" onclick="sendUserData()">Save Participant</button>
+        <button type="button" onclick="sendUserData()">Login</button>
       </form>
     </div>
     <div class="widget">
-      <div class="label">&#128225; GAP 1 Status</div>
+      <div class="label">&#128225; SOTERIA Status</div>
       <div id="received-message"></div>
     </div>
     <div class="widget">
@@ -354,11 +354,15 @@
       </form>
     </div>
     <div class="widget">
-    <button type="button" onclick="startLogging()">Start Logging</button>
-    <button type="button" onclick="stopLogging()">Stop Logging</button>
-    <button type="button" onclick="pauseLogging()">Pause Logging</button>
-    <button type="button" onclick="resumeLogging()">Resume Logging</button>
-  </div>
+        <div class="button-group">
+            <button type="button" onclick="startLogging()">Start Logging</button>
+            <button type="button" onclick="stopLogging()">Stop Logging</button>
+        </div>
+        <div class="button-group">
+            <button type="button" onclick="pauseLogging()">Pause Logging</button>
+            <button type="button" onclick="resumeLogging()">Resume Logging</button>
+        </div>
+    </div>
   </div>
 </body>
 
@@ -486,7 +490,7 @@
   const pairButton = document.getElementById('pairButton');
   const BLEstatus = document.getElementById('bluetooth');
 
-  snack('IMPORTANT - first upload the sketch to your GAP1 device &nbsp;&nbsp; <a href="https://create.arduino.cc/editor/balanagapranavs/e7020930-d173-424c-98ec-9669f668ac34/preview">OPEN</a>', 1)
+  snack('IMPORTANT - first upload the sketch to your SOTERIA device &nbsp;&nbsp; <a href="https://create.arduino.cc/editor/balanagapranavs/e7020930-d173-424c-98ec-9669f668ac34/preview">OPEN</a>', 1)
   
   if ("bluetooth" in navigator) {
     pairButton.addEventListener('click', function (event) {
@@ -794,7 +798,7 @@ function downloadParticipantData() {
   function onDisconnected(event) {
     let device = event.target;
     pairButton.style.backgroundColor = "red";
-    pairButton.innerHTML = "PAIR GAP1";
+    pairButton.innerHTML = "PAIR SOTERIA";
     snack("Device disconnected, please retry", 1)
     // clear read polling
     for (const sensor of sensors) {
