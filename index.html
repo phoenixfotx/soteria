@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> GAP 1 Dashboard</title>
+  <title> SOTERIA Dashboard</title>
 
   <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -353,12 +353,16 @@
         <button type="button" onclick="sendUserDataAndControlData()">Send Instruction</button>
       </form>
     </div>
-    <div class="widget">
-    <button type="button" onclick="startLogging()">Start Logging</button>
-    <button type="button" onclick="stopLogging()">Stop Logging</button>
-    <button type="button" onclick="pauseLogging()">Pause Logging</button>
-    <button type="button" onclick="resumeLogging()">Resume Logging</button>
-  </div>
+<div class="widget">
+    <div class="button-group">
+        <button type="button" onclick="startLogging()">Start Logging</button>
+        <button type="button" onclick="stopLogging()">Stop Logging</button>
+    </div>
+    <div class="button-group">
+        <button type="button" onclick="pauseLogging()">Pause Logging</button>
+        <button type="button" onclick="resumeLogging()">Resume Logging</button>
+    </div>
+</div>
   </div>
 </body>
 
