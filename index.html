@@ -336,7 +336,7 @@
       </form>
     </div>
     <div class="widget">
-      <div class="label">&#128225; GAP 1 Status</div>
+      <div class="label">&#128225; SOTERIA Status</div>
       <div id="received-message"></div>
     </div>
     <div class="widget">
@@ -502,7 +502,7 @@
   const pairButton = document.getElementById('pairButton');
   const BLEstatus = document.getElementById('bluetooth');
 
-  snack('IMPORTANT - first upload the sketch to your GAP1 device &nbsp;&nbsp; <a href="https://create.arduino.cc/editor/balanagapranavs/e7020930-d173-424c-98ec-9669f668ac34/preview">OPEN</a>', 1)
+  snack('IMPORTANT - first upload the sketch to your SOTERIA device &nbsp;&nbsp; <a href="https://create.arduino.cc/editor/balanagapranavs/e7020930-d173-424c-98ec-9669f668ac34/preview">OPEN</a>', 1)
   
   if ("bluetooth" in navigator) {
     pairButton.addEventListener('click', function (event) {
@@ -810,7 +810,7 @@ function downloadParticipantData() {
   function onDisconnected(event) {
     let device = event.target;
     pairButton.style.backgroundColor = "red";
-    pairButton.innerHTML = "PAIR GAP1";
+    pairButton.innerHTML = "PAIR SOTERIA";
     snack("Device disconnected, please retry", 1)
     // clear read polling
     for (const sensor of sensors) {
